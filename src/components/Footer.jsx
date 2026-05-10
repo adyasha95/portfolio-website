@@ -22,7 +22,7 @@ export default function Footer() {
           fontSize: 20, fontWeight: 700,
           color: "var(--on-surface)",
         }}>
-          adyasha<span style={{ color: "var(--primary)" }}>.dev</span>
+          adyasha<span style={{ color: "var(--primary)" }}>.ai</span>
         </span>
 
         <p style={{

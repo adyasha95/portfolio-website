@@ -52,7 +52,7 @@ export default function Navbar() {
             color: "var(--primary)", textDecoration: "none",
           }}
         >
-          adyasha.dev
+          adyasha.ai
         </a>
 
         {/* Desktop links */}
