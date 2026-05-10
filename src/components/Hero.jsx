@@ -83,7 +83,7 @@ export default function Hero() {
               margin: "0 0 18px",
             }}
           >
-            Clinical AI Researcher &amp; ML Engineer
+            AI/ML Research Engineer
           </motion.p>
 
           <motion.p
@@ -97,9 +97,7 @@ export default function Hero() {
               margin: "0 0 44px",
             }}
           >
-            Building privacy-preserving federated systems, clinical NLP pipelines,
-            and ML infrastructure across 11 European research sites. Turning complex
-            neural architectures into actionable medical insights.
+            From <span style={{ color: "var(--on-surface)", fontWeight: 500 }}>LLM fine-tuning</span> and <span style={{ color: "var(--on-surface)", fontWeight: 500 }}>transformer benchmarking</span> to <span style={{ color: "var(--on-surface)", fontWeight: 500 }}>federated deep learning</span> at scale. I build end-to-end ML systems that are explainable, reproducible, and production-ready.
           </motion.p>
 
           {/* CTAs */}

@@ -3,22 +3,28 @@ import { motion, useInView } from "framer-motion";
 
 const trajectory = [
   {
-    period: "2020 – Present",
-    role: "PhD Researcher & Data Science Lead",
-    org: "Multi-site EU Clinical Network",
-    detail: "Designing federated analysis pipelines for 11 European research institutions. Building privacy-preserving ML infrastructure using DataSHIELD, OPAL, and LangChain-based NLP agents.",
+    period: "May 2025 – Present",
+    role: "Freelance Data Scientist",
+    org: "Independent",
+    detail: "Designing and deploying LLM-powered pipelines, fine-tuning large language models for domain-specific NLP tasks, and benchmarking tabular deep learning architectures including TabTransformer and FT-Transformer against classical baselines across structured datasets.",
   },
   {
-    period: "2022 – Present",
-    role: "Clinical AI Consultant",
-    org: "Independent Practice",
-    detail: "Advising healthcare organisations on scalable ML deployment, federated learning strategy, and regulatory-compliant AI pipelines for diagnostic and prognostic applications.",
+    period: "Jul 2024 – May 2025",
+    role: "Senior Data Scientist",
+    org: "Research Associate",
+    detail: "Built end-to-end ML pipelines from raw data ingestion to model deployment. Specialised in explainable AI by integrating SHAP, LIME, and attention-based interpretability methods to surface model reasoning for stakeholder-facing outputs.",
   },
   {
-    period: "2018 – 2020",
-    role: "ML Research Engineer",
-    org: "Academic Medical Centre",
-    detail: "Developed BERT-based NLP models for structured entity extraction from EHR narratives. Produced 4 first-author publications in high-impact journals.",
+    period: "Oct 2019 – Jun 2024",
+    role: "PhD Researcher",
+    org: "Max Planck Fellow · LMU Munich",
+    detail: "Five years of applied AI research spanning transfer learning, privacy-preserving federated learning, and deep neural architectures across large-scale multi-site European research networks.",
+  },
+  {
+    period: "Oct 2016 – Aug 2019",
+    role: "Research Assistant",
+    org: "Neuroscience Lab",
+    detail: "Developed signal processing and pattern classification pipelines for high-dimensional time-series data. Applied unsupervised clustering and supervised classification to EEG and physiological recordings.",
   },
 ];
 
@@ -79,9 +85,7 @@ export default function About() {
             maxWidth: 680,
             margin: 0,
           }}>
-            As a PhD specialising in Clinical AI, I bridge the gap between complex neural
-            architectures and actionable medical insights — building systems that prioritise
-            patient privacy while maximising diagnostic accuracy across international sites.
+            8+ years turning messy, high-dimensional data into production ML systems. I work across the full stack: wrangling raw data, fine-tuning LLMs, shipping explainable models with SHAP, and deploying privacy-preserving pipelines at scale. Equally comfortable in research and industry settings.
           </p>
         </motion.div>
 

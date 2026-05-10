@@ -51,7 +51,7 @@ export default function Services() {
             fontSize: "clamp(32px, 4vw, 48px)",
             fontWeight: 700, letterSpacing: "-0.02em",
             color: "var(--on-surface)", margin: 0,
-          }}>Specialized Expertise</h2>
+          }}>Expertise</h2>
         </motion.div>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
