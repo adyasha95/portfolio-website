@@ -50,25 +50,11 @@ export default function About() {
             aspectRatio: "4/5",
           }}>
             {/* Photo placeholder — drop photo.jpg into /public to replace */}
-            <div style={{
-              width: "100%", height: "100%", minHeight: 420,
-              background: "linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #0f3460 100%)",
-              display: "flex", flexDirection: "column",
-              alignItems: "center", justifyContent: "center",
-              gap: 12,
-            }}>
-              <div style={{
-                width: 80, height: 80, borderRadius: "50%",
-                border: "2px solid rgba(173,198,255,0.3)",
-                display: "flex", alignItems: "center", justifyContent: "center",
-                color: "rgba(173,198,255,0.4)", fontSize: 32,
-              }}>A</div>
-              <p style={{ color: "rgba(173,198,255,0.3)", fontSize: 11, fontFamily: "Inter", textAlign: "center", padding: "0 24px" }}>
-                Add your photo.jpg to /public
-              </p>
-            </div>
-            {/* Replace above div with: */}
-            {/* <img src="/photo.jpg" alt="Adyasha Khuntia" style={{ width: "100%", height: "100%", objectFit: "cover" }} /> */}
+            <img
+              src="/photo.jpg"
+              alt="Adyasha Khuntia"
+              style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }}
+            />
           </div>
         </motion.div>
 
