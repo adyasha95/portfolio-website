@@ -1,12 +1,14 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 28 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] },
+  transition: { duration: 0.75, delay, ease: [0.16, 1, 0.3, 1] },
 });
 
 export default function Hero() {
+  const [photoHovered, setPhotoHovered] = useState(false);
   const scrollTo = (href) => document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
 
   return (
@@ -17,136 +19,320 @@ export default function Hero() {
         minHeight: "100vh",
         display: "flex",
         alignItems: "center",
-        justifyContent: "center",
         overflow: "hidden",
         background: "var(--bg)",
+        padding: "0 64px",
       }}
     >
-      {/* Circuit dot background */}
+      {/* Circuit dot texture */}
       <div className="circuit-bg" style={{ position: "absolute", inset: 0, zIndex: 0 }} />
 
-      {/* Large radial glow */}
+      {/* Radial glow left */}
       <div style={{
-        position: "absolute", inset: 0, zIndex: 1,
-        background: "radial-gradient(ellipse 80% 60% at 50% 40%, rgba(173,198,255,0.07) 0%, transparent 70%)",
+        position: "absolute", top: "30%", left: "10%",
+        width: 700, height: 700,
+        background: "radial-gradient(circle, rgba(173,198,255,0.07) 0%, transparent 65%)",
+        transform: "translate(-30%, -30%)",
+        pointerEvents: "none", zIndex: 1,
       }} />
 
       {/* Bottom fade */}
       <div style={{
-        position: "absolute", bottom: 0, left: 0, right: 0, height: 200, zIndex: 2,
+        position: "absolute", bottom: 0, left: 0, right: 0, height: 220, zIndex: 2,
         background: "linear-gradient(to top, var(--bg), transparent)",
+        pointerEvents: "none",
       }} />
 
-      {/* Content */}
-      <div style={{ position: "relative", zIndex: 10, textAlign: "center", padding: "0 24px", maxWidth: 900, margin: "0 auto" }}>
+      {/* 2-col grid */}
+      <div style={{
+        position: "relative", zIndex: 10,
+        maxWidth: 1280, margin: "0 auto", width: "100%",
+        display: "grid", gridTemplateColumns: "1fr auto",
+        gap: 80, alignItems: "center",
+        paddingTop: 100,
+      }}>
 
-        {/* Status badge */}
-        <motion.div {...fadeUp(0.1)} style={{ marginBottom: 32, display: "flex", justifyContent: "center" }}>
-          <span style={{
-            display: "inline-flex", alignItems: "center", gap: 8,
-            padding: "6px 16px", borderRadius: 9999,
-            border: "1px solid rgba(173,198,255,0.2)",
-            background: "rgba(173,198,255,0.06)",
-            color: "var(--primary)",
-            fontFamily: "Inter", fontSize: 11, fontWeight: 700,
-            letterSpacing: "0.08em", textTransform: "uppercase",
-          }}>
-            <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--secondary)", animation: "pulse 2s infinite" }} />
-            Available for Consulting
-          </span>
-        </motion.div>
+        {/* ── Left: Text ── */}
+        <div>
+          {/* Status badge */}
+          <motion.div {...fadeUp(0.1)} style={{ marginBottom: 36 }}>
+            <span style={{
+              display: "inline-flex", alignItems: "center", gap: 8,
+              padding: "6px 18px", borderRadius: 9999,
+              border: "1px solid rgba(173,198,255,0.2)",
+              background: "rgba(173,198,255,0.06)",
+              color: "var(--primary)",
+              fontFamily: "Inter", fontSize: 11, fontWeight: 700,
+              letterSpacing: "0.09em", textTransform: "uppercase",
+            }}>
+              <span style={{
+                width: 6, height: 6, borderRadius: "50%",
+                background: "var(--secondary)",
+                animation: "heroPulse 2s infinite",
+                flexShrink: 0,
+              }} />
+              Available for Consulting
+            </span>
+          </motion.div>
 
-        {/* Name */}
-        <motion.h1
-          {...fadeUp(0.2)}
-          style={{
-            fontFamily: "'Space Grotesk', sans-serif",
-            fontSize: "clamp(48px, 8vw, 80px)",
-            fontWeight: 700,
-            lineHeight: 1.08,
-            letterSpacing: "-0.04em",
-            color: "var(--on-surface)",
-            margin: "0 0 20px",
-          }}
-        >
-          Adyasha Khuntia,{" "}
-          <span style={{ color: "var(--primary)" }}>PhD</span>
-        </motion.h1>
-
-        {/* Tagline */}
-        <motion.p
-          {...fadeUp(0.35)}
-          style={{
-            fontFamily: "'Space Grotesk', sans-serif",
-            fontSize: "clamp(18px, 3vw, 26px)",
-            fontWeight: 600,
-            color: "var(--on-surface-var)",
-            letterSpacing: "-0.01em",
-            margin: "0 0 16px",
-          }}
-        >
-          Building AI that works in the real world of healthcare
-        </motion.p>
-
-        <motion.p
-          {...fadeUp(0.45)}
-          style={{
-            fontFamily: "Inter",
-            fontSize: 17,
-            lineHeight: 1.7,
-            color: "var(--outline)",
-            maxWidth: 580,
-            margin: "0 auto 44px",
-          }}
-        >
-          PhD researcher &amp; ML engineer specialising in federated learning, clinical NLP,
-          and privacy-preserving AI infrastructure across 11 European research sites.
-        </motion.p>
-
-        {/* CTAs */}
-        <motion.div {...fadeUp(0.55)} style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-          <button
-            onClick={() => scrollTo("#projects")}
+          {/* Name */}
+          <motion.h1
+            {...fadeUp(0.2)}
             style={{
-              background: "var(--primary)",
-              color: "var(--on-primary)",
-              border: "none", cursor: "pointer",
-              padding: "16px 36px",
-              borderRadius: 9999,
-              fontFamily: "Inter", fontSize: 13, fontWeight: 700,
-              letterSpacing: "0.05em", textTransform: "uppercase",
-              transition: "all 0.2s",
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontSize: "clamp(44px, 6vw, 76px)",
+              fontWeight: 700,
+              lineHeight: 1.08,
+              letterSpacing: "-0.04em",
+              color: "var(--on-surface)",
+              margin: "0 0 20px",
             }}
-            onMouseEnter={(e) => { e.target.style.boxShadow = "0 0 28px rgba(173,198,255,0.4)"; e.target.style.transform = "scale(1.03)"; }}
-            onMouseLeave={(e) => { e.target.style.boxShadow = "none"; e.target.style.transform = "scale(1)"; }}
           >
-            Explore My Work
-          </button>
-          <button
-            onClick={() => scrollTo("#contact")}
+            Adyasha Khuntia,{" "}
+            <span style={{ color: "var(--primary)" }}>PhD</span>
+          </motion.h1>
+
+          {/* Role */}
+          <motion.p
+            {...fadeUp(0.3)}
             style={{
-              background: "transparent",
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontSize: "clamp(18px, 2.5vw, 24px)",
+              fontWeight: 600,
               color: "var(--secondary)",
-              border: "1px solid var(--secondary)",
-              cursor: "pointer",
-              padding: "16px 36px",
-              borderRadius: 9999,
-              fontFamily: "Inter", fontSize: 13, fontWeight: 700,
-              letterSpacing: "0.05em", textTransform: "uppercase",
-              transition: "all 0.2s",
+              letterSpacing: "-0.01em",
+              margin: "0 0 18px",
             }}
-            onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(79,219,200,0.08)"; }}
-            onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; }}
           >
-            Work With Me
-          </button>
+            Clinical AI Researcher &amp; ML Engineer
+          </motion.p>
+
+          <motion.p
+            {...fadeUp(0.4)}
+            style={{
+              fontFamily: "Inter",
+              fontSize: 17,
+              lineHeight: 1.75,
+              color: "var(--on-surface-var)",
+              maxWidth: 520,
+              margin: "0 0 44px",
+            }}
+          >
+            Building privacy-preserving federated systems, clinical NLP pipelines,
+            and ML infrastructure across 11 European research sites. Turning complex
+            neural architectures into actionable medical insights.
+          </motion.p>
+
+          {/* CTAs */}
+          <motion.div {...fadeUp(0.5)} style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
+            <button
+              onClick={() => scrollTo("#projects")}
+              style={{
+                background: "var(--primary)",
+                color: "var(--on-primary)",
+                border: "none", cursor: "pointer",
+                padding: "16px 36px",
+                borderRadius: 9999,
+                fontFamily: "Inter", fontSize: 13, fontWeight: 700,
+                letterSpacing: "0.05em", textTransform: "uppercase",
+                transition: "all 0.2s",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow = "0 0 32px rgba(173,198,255,0.45)";
+                e.currentTarget.style.transform = "scale(1.03)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = "none";
+                e.currentTarget.style.transform = "scale(1)";
+              }}
+            >
+              Explore My Work
+            </button>
+            <button
+              onClick={() => scrollTo("#contact")}
+              style={{
+                background: "transparent",
+                color: "var(--secondary)",
+                border: "1px solid rgba(79,219,200,0.4)",
+                cursor: "pointer",
+                padding: "16px 36px",
+                borderRadius: 9999,
+                fontFamily: "Inter", fontSize: 13, fontWeight: 700,
+                letterSpacing: "0.05em", textTransform: "uppercase",
+                transition: "all 0.2s",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "rgba(79,219,200,0.08)";
+                e.currentTarget.style.borderColor = "rgba(79,219,200,0.7)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "transparent";
+                e.currentTarget.style.borderColor = "rgba(79,219,200,0.4)";
+              }}
+            >
+              Work With Me
+            </button>
+          </motion.div>
+
+          {/* Quick stats row */}
+          <motion.div
+            {...fadeUp(0.6)}
+            style={{
+              display: "flex", gap: 40, marginTop: 56,
+              paddingTop: 40,
+              borderTop: "1px solid rgba(255,255,255,0.06)",
+            }}
+          >
+            {[
+              { value: "6+", label: "Years Experience" },
+              { value: "8", label: "Publications" },
+              { value: "11", label: "EU Research Sites" },
+            ].map(({ value, label }) => (
+              <div key={label}>
+                <div style={{
+                  fontFamily: "'Space Grotesk', sans-serif",
+                  fontSize: 32, fontWeight: 700,
+                  color: "var(--primary)", lineHeight: 1,
+                  marginBottom: 4,
+                }}>{value}</div>
+                <div style={{
+                  fontFamily: "Inter", fontSize: 12, fontWeight: 500,
+                  color: "var(--on-surface-var)",
+                }}>{label}</div>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* ── Right: Circular Portrait ── */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.92 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.9, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+          style={{ position: "relative", flexShrink: 0 }}
+          className="hero-photo-wrap"
+        >
+          {/* Pulsing glow ring */}
+          <div style={{
+            position: "absolute",
+            inset: -20,
+            borderRadius: "50%",
+            background: "radial-gradient(circle, rgba(173,198,255,0.18) 0%, transparent 70%)",
+            animation: "glowPulse 3s ease-in-out infinite",
+            zIndex: 0,
+          }} />
+
+          {/* Outer decorative ring */}
+          <div style={{
+            position: "absolute",
+            inset: -6,
+            borderRadius: "50%",
+            border: "1px solid rgba(173,198,255,0.25)",
+            zIndex: 1,
+          }} />
+
+          {/* Photo circle */}
+          <div
+            style={{
+              position: "relative",
+              zIndex: 2,
+              width: 400,
+              height: 400,
+              borderRadius: "50%",
+              overflow: "hidden",
+              border: "3px solid var(--primary)",
+              cursor: "default",
+            }}
+            onMouseEnter={() => setPhotoHovered(true)}
+            onMouseLeave={() => setPhotoHovered(false)}
+          >
+            <img
+              src="/photo.jpg"
+              alt="Adyasha Khuntia"
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                objectPosition: "center top",
+                filter: photoHovered ? "grayscale(0) brightness(1)" : "grayscale(0.4) brightness(0.92)",
+                transition: "filter 0.5s ease",
+              }}
+            />
+          </div>
+
+          {/* Floating badge — bottom right */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.5 }}
+            style={{
+              position: "absolute",
+              bottom: 16, right: -24,
+              zIndex: 10,
+              background: "rgba(23,23,23,0.85)",
+              backdropFilter: "blur(12px)",
+              border: "1px solid rgba(173,198,255,0.2)",
+              borderRadius: 10,
+              padding: "10px 16px",
+            }}
+          >
+            <div style={{
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontSize: 20, fontWeight: 700,
+              color: "var(--primary)", lineHeight: 1,
+            }}>AUC 0.94</div>
+            <div style={{
+              fontFamily: "Inter", fontSize: 10, fontWeight: 600,
+              color: "var(--on-surface-var)", letterSpacing: "0.05em",
+              textTransform: "uppercase", marginTop: 3,
+            }}>Clinical Model</div>
+          </motion.div>
+
+          {/* Floating badge — top left */}
+          <motion.div
+            initial={{ opacity: 0, y: -12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1, duration: 0.5 }}
+            style={{
+              position: "absolute",
+              top: 24, left: -28,
+              zIndex: 10,
+              background: "rgba(23,23,23,0.85)",
+              backdropFilter: "blur(12px)",
+              border: "1px solid rgba(79,219,200,0.2)",
+              borderRadius: 10,
+              padding: "10px 16px",
+            }}
+          >
+            <div style={{
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontSize: 18, fontWeight: 700,
+              color: "var(--secondary)", lineHeight: 1,
+            }}>11 Sites</div>
+            <div style={{
+              fontFamily: "Inter", fontSize: 10, fontWeight: 600,
+              color: "var(--on-surface-var)", letterSpacing: "0.05em",
+              textTransform: "uppercase", marginTop: 3,
+            }}>Federated EU Network</div>
+          </motion.div>
         </motion.div>
+
       </div>
 
       <style>{`
-        @keyframes pulse {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0.4; }
+        @keyframes heroPulse {
+          0%, 100% { opacity: 1; transform: scale(1); }
+          50% { opacity: 0.4; transform: scale(0.9); }
+        }
+        @keyframes glowPulse {
+          0%, 100% { opacity: 0.6; transform: scale(1); }
+          50% { opacity: 1; transform: scale(1.05); }
+        }
+        @media (max-width: 900px) {
+          #hero { padding: 0 24px !important; }
+          #hero > div > div:first-child > div { grid-template-columns: 1fr !important; }
+          .hero-photo-wrap { display: none; }
+          #hero > div > div { grid-template-columns: 1fr !important; gap: 40px !important; padding-top: 80px !important; }
         }
       `}</style>
     </section>

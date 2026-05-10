@@ -44,6 +44,18 @@
   background-size: 40px 40px;
 }
 
+/* ─── Mesh gradient background (fixed, fullscreen) ─── */
+.mesh-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 80% 50% at 20% 10%, rgba(77, 142, 254, 0.09) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 80%, rgba(79, 219, 200, 0.07) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 60% at 60% 30%, rgba(173, 198, 255, 0.05) 0%, transparent 50%);
+}
+
 /* ─── Radial glow helpers ─── */
 .glow-blue {
   background: radial-gradient(circle at center, rgba(173, 198, 255, 0.08) 0%, transparent 70%);
