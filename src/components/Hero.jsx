@@ -54,27 +54,6 @@ export default function Hero() {
 
         {/* ── Left: Text ── */}
         <div>
-          {/* Status badge */}
-          <motion.div {...fadeUp(0.1)} style={{ marginBottom: 36 }}>
-            <span style={{
-              display: "inline-flex", alignItems: "center", gap: 8,
-              padding: "6px 18px", borderRadius: 9999,
-              border: "1px solid rgba(173,198,255,0.2)",
-              background: "rgba(173,198,255,0.06)",
-              color: "var(--primary)",
-              fontFamily: "Inter", fontSize: 11, fontWeight: 700,
-              letterSpacing: "0.09em", textTransform: "uppercase",
-            }}>
-              <span style={{
-                width: 6, height: 6, borderRadius: "50%",
-                background: "var(--secondary)",
-                animation: "heroPulse 2s infinite",
-                flexShrink: 0,
-              }} />
-              Available for Consulting
-            </span>
-          </motion.div>
-
           {/* Name */}
           <motion.h1
             {...fadeUp(0.2)}
@@ -260,61 +239,6 @@ export default function Hero() {
             />
           </div>
 
-          {/* Floating badge — bottom right */}
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.5 }}
-            style={{
-              position: "absolute",
-              bottom: 16, right: -24,
-              zIndex: 10,
-              background: "rgba(23,23,23,0.85)",
-              backdropFilter: "blur(12px)",
-              border: "1px solid rgba(173,198,255,0.2)",
-              borderRadius: 10,
-              padding: "10px 16px",
-            }}
-          >
-            <div style={{
-              fontFamily: "'Space Grotesk', sans-serif",
-              fontSize: 20, fontWeight: 700,
-              color: "var(--primary)", lineHeight: 1,
-            }}>AUC 0.94</div>
-            <div style={{
-              fontFamily: "Inter", fontSize: 10, fontWeight: 600,
-              color: "var(--on-surface-var)", letterSpacing: "0.05em",
-              textTransform: "uppercase", marginTop: 3,
-            }}>Clinical Model</div>
-          </motion.div>
-
-          {/* Floating badge — top left */}
-          <motion.div
-            initial={{ opacity: 0, y: -12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 0.5 }}
-            style={{
-              position: "absolute",
-              top: 24, left: -28,
-              zIndex: 10,
-              background: "rgba(23,23,23,0.85)",
-              backdropFilter: "blur(12px)",
-              border: "1px solid rgba(79,219,200,0.2)",
-              borderRadius: 10,
-              padding: "10px 16px",
-            }}
-          >
-            <div style={{
-              fontFamily: "'Space Grotesk', sans-serif",
-              fontSize: 18, fontWeight: 700,
-              color: "var(--secondary)", lineHeight: 1,
-            }}>11 Sites</div>
-            <div style={{
-              fontFamily: "Inter", fontSize: 10, fontWeight: 600,
-              color: "var(--on-surface-var)", letterSpacing: "0.05em",
-              textTransform: "uppercase", marginTop: 3,
-            }}>Federated EU Network</div>
-          </motion.div>
         </motion.div>
 
       </div>

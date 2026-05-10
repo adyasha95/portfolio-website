@@ -95,7 +95,7 @@ export default function Navbar() {
               e.target.style.transform = "scale(1)";
             }}
           >
-            Hire Me
+            Work With Me
           </button>
         </div>
 
@@ -127,7 +127,7 @@ export default function Navbar() {
               ))}
               <button onClick={() => scrollTo("#contact")}
                 style={{ background: "var(--primary)", color: "var(--on-primary)", border: "none", cursor: "pointer", padding: "10px 0", borderRadius: 9999, fontFamily: "Inter", fontSize: 12, fontWeight: 700, letterSpacing: "0.05em", textTransform: "uppercase" }}>
-                Hire Me
+                Work With Me
               </button>
             </div>
           </motion.div>
