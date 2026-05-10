@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+/* ─── Stitch Design Tokens ─── */
+:root {
+  --bg:               #131313;
+  --surface-lowest:   #0e0e0e;
+  --surface-low:      #1c1b1b;
+  --surface:          #131313;
+  --surface-mid:      #201f1f;
+  --surface-high:     #2a2a2a;
+  --surface-highest:  #353534;
+  --surface-bright:   #3a3939;
+
+  --primary:          #adc6ff;
+  --primary-btn:      #4d8efe;
+  --on-primary:       #002e69;
+  --primary-container:#4d8efe;
+
+  --secondary:        #4fdbc8;
+  --on-secondary:     #003731;
+
+  --on-surface:       #e5e2e1;
+  --on-surface-var:   #c2c6d5;
+  --outline:          #8c909f;
+  --outline-var:      #424753;
+}
+
+/* ─── Glassmorphism card ─── */
+.glass-card {
+  background: rgba(23, 23, 23, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-top-color: rgba(255, 255, 255, 0.18);
+}
+.glass-card:hover {
+  border-color: rgba(173, 198, 255, 0.25);
+  border-top-color: rgba(173, 198, 255, 0.35);
+}
+
+/* ─── Circuit dot background ─── */
+.circuit-bg {
+  background-image: radial-gradient(circle at 1px 1px, rgba(173, 198, 255, 0.06) 1px, transparent 0);
+  background-size: 40px 40px;
+}
+
+/* ─── Radial glow helpers ─── */
+.glow-blue {
+  background: radial-gradient(circle at center, rgba(173, 198, 255, 0.08) 0%, transparent 70%);
+}
+.glow-teal {
+  background: radial-gradient(circle at center, rgba(79, 219, 200, 0.08) 0%, transparent 70%);
+}
+
+/* ─── Reset & base ─── */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--on-surface);
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root { width: 100%; }
+
+::selection {
+  background-color: rgba(173, 198, 255, 0.25);
+  color: #fff;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #0e0e0e; }
+::-webkit-scrollbar-thumb { background: var(--outline-var); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--primary); }
