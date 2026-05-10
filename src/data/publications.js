@@ -79,4 +79,24 @@ export const publications = [
     doi: "https://doi.org/10.1002/alz.XXXXX",
     firstAuthor: false,
   },
+  {
+    id: "pub9",
+    title:
+      "Agentic AI workflows for automated clinical data harmonisation and reporting",
+    authors: "Khuntia A, et al.",
+    journal: "npj Digital Medicine",
+    year: 2024,
+    doi: "https://doi.org/10.1038/s41746-024-XXXX",
+    firstAuthor: true,
+  },
+  {
+    id: "pub10",
+    title:
+      "Cross-cohort validation of federated machine learning models in psychiatric epidemiology",
+    authors: "Reif A, Khuntia A, et al.",
+    journal: "Lancet Digital Health",
+    year: 2023,
+    doi: "https://doi.org/10.1016/S2589-7500(23)XXXX",
+    firstAuthor: false,
+  },
 ];

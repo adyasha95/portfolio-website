@@ -100,9 +100,33 @@ export default function Publications() {
             fontWeight: 700, letterSpacing: "-0.02em",
             color: "var(--on-surface)", margin: "0 0 12px",
           }}>Academic Publications</h2>
-          <p style={{ fontFamily: "Inter", fontSize: 15, color: "var(--on-surface-var)", margin: 0 }}>
-            {publications.length} peer-reviewed papers · {firstAuthorCount} as first author
-          </p>
+          <div style={{ display: "flex", alignItems: "center", gap: 24, flexWrap: "wrap" }}>
+            <p style={{ fontFamily: "Inter", fontSize: 15, color: "var(--on-surface-var)", margin: 0 }}>
+              {publications.length}+ peer-reviewed papers · {firstAuthorCount} as first author
+            </p>
+            <a
+              href="https://scholar.google.com/citations?user=adyasha-khuntia"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-flex", alignItems: "center", gap: 8,
+                padding: "7px 18px", borderRadius: 9999,
+                border: "1px solid rgba(173,198,255,0.2)",
+                background: "rgba(173,198,255,0.06)",
+                fontFamily: "Inter", fontSize: 11, fontWeight: 700,
+                letterSpacing: "0.07em", textTransform: "uppercase",
+                color: "var(--primary)", textDecoration: "none",
+                transition: "background 0.2s",
+              }}
+              onMouseEnter={(e) => e.currentTarget.style.background = "rgba(173,198,255,0.12)"}
+              onMouseLeave={(e) => e.currentTarget.style.background = "rgba(173,198,255,0.06)"}
+            >
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5h3.6v8.4h3.6V9.5h1.8l3 3V24h6V12.5l3-3H24L12 0z"/>
+              </svg>
+              Google Scholar
+            </a>
+          </div>
         </motion.div>
 
         <div>

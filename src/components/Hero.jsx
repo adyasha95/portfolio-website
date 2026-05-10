@@ -185,7 +185,7 @@ export default function Hero() {
           >
             {[
               { value: "6+", label: "Years Experience" },
-              { value: "8", label: "Publications" },
+              { value: "10+", label: "Publications" },
               { value: "11", label: "EU Research Sites" },
             ].map(({ value, label }) => (
               <div key={label}>

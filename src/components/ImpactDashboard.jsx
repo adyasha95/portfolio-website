@@ -33,7 +33,7 @@ const metrics = [
 
 const highlights = [
   { value: "11", label: "European Sites", sub: "active federated network" },
-  { value: "8", label: "Publications", sub: "peer-reviewed journals" },
+  { value: "10+", label: "Publications", sub: "peer-reviewed journals" },
   { value: "1,504", label: "Patients", sub: "largest single cohort" },
   { value: "6+", label: "Years", sub: "clinical AI research" },
 ];

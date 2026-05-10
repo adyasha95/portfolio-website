@@ -1,7 +1,7 @@
 const links = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/adyasha-khuntia" },
-  { label: "GitHub", href: "https://github.com/adyasha-khuntia" },
-  { label: "Scholar", href: "https://scholar.google.com/citations?user=adyasha-khuntia" },
+  { label: "GitHub", href: "https://github.com/adyasha95" },
+  { label: "Google Scholar", href: "https://scholar.google.com/citations?user=adyasha-khuntia" },
 ];
 
 export default function Footer() {
