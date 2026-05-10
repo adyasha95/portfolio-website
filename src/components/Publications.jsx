@@ -105,7 +105,7 @@ export default function Publications() {
               {publications.length}+ peer-reviewed papers · {firstAuthorCount} as first author
             </p>
             <a
-              href="https://scholar.google.com/citations?user=adyasha-khuntia"
+              href="https://scholar.google.com/citations?user=1MYba1EAAAAJ&hl=en"
               target="_blank"
               rel="noopener noreferrer"
               style={{
