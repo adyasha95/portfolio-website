@@ -3,7 +3,8 @@ import { motion, useInView } from "framer-motion";
 
 const EMAIL = "adyasha95@gmail.com";
 const LINKEDIN = "https://www.linkedin.com/in/adyasha-khuntia";
-const GITHUB = "https://github.com/adyasha-khuntia";
+const GITHUB = "https://github.com/adyasha95";
+const SCHOLAR = "https://scholar.google.com/citations?user=1MYba1EAAAAJ&hl=en";
 
 function LinkedinIcon({ size = 18 }) {
   return (
@@ -136,6 +137,30 @@ export default function Contact() {
             >
               <GithubIcon size={18} />
               GitHub
+            </a>
+
+            <a
+              href={SCHOLAR}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-flex", alignItems: "center", gap: 12,
+                background: "var(--surface-high)",
+                color: "var(--on-surface)",
+                padding: "18px 36px",
+                borderRadius: 9999,
+                fontFamily: "Inter", fontSize: 13, fontWeight: 700,
+                letterSpacing: "0.06em", textTransform: "uppercase",
+                textDecoration: "none",
+                transition: "background 0.2s",
+              }}
+              onMouseEnter={(e) => e.currentTarget.style.background = "var(--surface-bright)"}
+              onMouseLeave={(e) => e.currentTarget.style.background = "var(--surface-high)"}
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5h3.6v8.4h3.6V9.5h1.8l3 3V24h6V12.5l3-3H24L12 0z"/>
+              </svg>
+              Scholar
             </a>
           </div>
         </motion.div>

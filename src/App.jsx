@@ -5,8 +5,6 @@ import ImpactDashboard from "./components/ImpactDashboard";
 import Services from "./components/Services";
 import Projects from "./components/Projects";
 import GitHubProjects from "./components/GitHubProjects";
-import Publications from "./components/Publications";
-import TrustBar from "./components/TrustBar";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
@@ -24,8 +22,6 @@ export default function App() {
         <Services />
         <Projects />
         <GitHubProjects />
-        <Publications />
-        <TrustBar />
         <Contact />
       </main>
       <Footer />
